@@ -28,6 +28,7 @@ namespace ByteBank.Agencias
         {
             InitializeComponent();
 
+            //this e dp tipo MainWindow.
             lstAgencias = new AgenciasListBox(this);
             AtualizarControles();
         }
@@ -40,6 +41,7 @@ namespace ByteBank.Agencias
             Canvas.SetTop(lstAgencias, 15);
             Canvas.SetLeft(lstAgencias, 15);
 
+            //coisas do WPF vc tem o canvas e children: vc vai adicionar um novo filho. 
             container.Children.Add(lstAgencias);
 
             lstAgencias.Items.Clear();
@@ -50,6 +52,7 @@ namespace ByteBank.Agencias
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+          
             var confirmacao = 
                 MessageBox.Show(
                     "Você deseja realmente excluir este item?",

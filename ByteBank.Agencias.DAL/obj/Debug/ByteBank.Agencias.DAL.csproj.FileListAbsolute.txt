@@ -1,0 +1,13 @@
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\bin\Debug\ByteBank.mdf
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\bin\Debug\ByteBank_log.ldf
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\bin\Debug\ByteBank.Agencias.DAL.dll.config
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\bin\Debug\ByteBank.Agencias.DAL.dll
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\bin\Debug\ByteBank.Agencias.DAL.pdb
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\bin\Debug\EntityFramework.dll
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\bin\Debug\EntityFramework.xml
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\obj\Debug\ByteBank.Agencias.DAL.csprojResolveAssemblyReference.cache
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\obj\Debug\ByteBank.Agencias.DAL.csproj.CoreCompileInputs.cache
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\obj\Debug\ByteBank.Agencias.DAL.dll
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias.DAL\obj\Debug\ByteBank.Agencias.DAL.pdb
