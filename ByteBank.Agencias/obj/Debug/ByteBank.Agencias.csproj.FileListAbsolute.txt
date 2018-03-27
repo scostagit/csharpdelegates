@@ -22,3 +22,5 @@ D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\Byt
 D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\ByteBank.Agencias.csproj.CoreCompileInputs.cache
 D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\ByteBank.Agencias.exe
 D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\ByteBank.Agencias.pdb
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\EdicaoAgencia.g.cs
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\EdicaoAgencia.baml
