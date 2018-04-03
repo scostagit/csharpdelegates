@@ -46,7 +46,7 @@ namespace ByteBank.Agencias
         {
             //Duas formas de manipulas delegates. tudo funiona.
 
-            var okEventHandler = (RoutedEventHandler)btnOk_Click + Fechar;
+
             //var cancelarEventHandler = (RoutedEventHandler)btnCancelar_Click + Fechar;
 
             //Por baixo dos panos o codigo acima esta chando a classe Delegate e fazendo um combine
@@ -58,30 +58,60 @@ namespace ByteBank.Agencias
             //                          (RoutedEventHandler)btnOk_Click, 
             //                          (RoutedEventHandler)Fechar); 
 
+
+            /*var okEventHandler = (RoutedEventHandler)btnOk_Click + Fechar;
+
             var cancelarEventHandler = (RoutedEventHandler)Delegate.Combine(
                                       (RoutedEventHandler)btnCancelar_Click,
-                                      (RoutedEventHandler)Fechar);
+                                      (RoutedEventHandler)Fechar);*/
 
+            // Criação e metodos anonimo
+            RoutedEventHandler dialogeResultTrue = delegate (object sender, RoutedEventArgs e) {
+                DialogResult = true;
+            };
+
+            //Criação de mentodo s anonimos.
+            RoutedEventHandler dialogeResultFalse = delegate (object sender, RoutedEventArgs e) {
+                DialogResult = true;
+            };
+
+            var okEventHandler = dialogeResultTrue  + Fechar;
+
+            var cancelarEventHandler = (RoutedEventHandler)Delegate.Combine(
+                                      dialogeResultFalse,
+                                      (RoutedEventHandler)Fechar);
 
             //mesma coisa que o codigo acima
 
             //assinando os eventso do click
-            this.btnOk.Click += new RoutedEventHandler(btnOk_Click);
-            this.btnCancelar.Click += new RoutedEventHandler(btnCancelar_Click);
+            this.btnOk.Click += new RoutedEventHandler(okEventHandler);
+            this.btnCancelar.Click += new RoutedEventHandler(cancelarEventHandler);
 
             this.btnOk.Click += new RoutedEventHandler(Fechar);
             this.btnCancelar.Click += new RoutedEventHandler(Fechar);
         }
 
-        private void btnOk_Click(object sender, RoutedEventArgs e)=>        
-            DialogResult = true;    
-        
-        private void btnCancelar_Click(object sender, RoutedEventArgs e)=>        
-            DialogResult = false; 
+        /*  private void btnOk_Click(object sender, RoutedEventArgs e)=>        
+              DialogResult = true;    
 
-        private void Fechar(object sender, RoutedEventArgs e) =>
-            this.Close();
-        
+          private void btnCancelar_Click(object sender, RoutedEventArgs e)=>        
+              DialogResult = false; */
+
+
+        /*
+         * CONECIETO
+         * 
+         * COntra variancia
+         * é capacidade de um parametro de metodo ser substituido pela classe pai.
+         * o metodo fechar deve receber como segungo parametro um objeto do tipo RoutedEventArgs
+         * mas como RoutedEventArgs herda de EventArgs eu posso passar a super classe. Isso é contra Varicia..
+         */
+        //private void Fechar(object sender, RoutedEventArgs e) =>
+        //    this.Close();
+
+        private void Fechar(object sender, EventArgs e) =>
+           this.Close();
+
     }
 }
 
