@@ -66,15 +66,22 @@ namespace ByteBank.Agencias
                                       (RoutedEventHandler)Fechar);*/
 
             // Criação e metodos anonimo
-            RoutedEventHandler dialogeResultTrue = delegate (object sender, RoutedEventArgs e) {
-                DialogResult = true;
-            };
+            //RoutedEventHandler dialogeResultTrue = delegate (object sender, RoutedEventArgs e) {
+            //    DialogResult = true;
+            //};
 
             //Criação de mentodo s anonimos.
-            RoutedEventHandler dialogeResultFalse = delegate (object sender, RoutedEventArgs e) {
-                DialogResult = true;
-            };
+            //RoutedEventHandler dialogeResultFalse = delegate (object sender, RoutedEventArgs e) {
+            //    DialogResult = true;
+            //};
 
+            //Metodo anonimo com expressao lambda
+            RoutedEventHandler dialogeResultTrue =  ( sender,  e)=>  DialogResult = true;          
+
+            //Metodo anonomo com expressao lambem
+            RoutedEventHandler dialogeResultFalse =  ( sender,  e)=>  DialogResult = false;
+           
+            //var vanis deixar o compilador inferir para mim.
             var okEventHandler = dialogeResultTrue  + Fechar;
 
             var cancelarEventHandler = (RoutedEventHandler)Delegate.Combine(
@@ -89,6 +96,23 @@ namespace ByteBank.Agencias
 
             this.btnOk.Click += new RoutedEventHandler(Fechar);
             this.btnCancelar.Click += new RoutedEventHandler(Fechar);
+
+            this.txtNumero.TextChanged += ValidarCampoNulo;
+            this.txtNome.TextChanged += ValidarCampoNulo;
+            this.txtTelefone.TextChanged += ValidarCampoNulo;
+            this.txtDescricao.TextChanged += ValidarCampoNulo;
+            this.txtEndereco.TextChanged += ValidarCampoNulo;        }    
+
+        private void ValidarCampoNulo(object sender, EventArgs e)
+        {
+            var text = sender as TextBox;
+
+            var textoVazio = String.IsNullOrEmpty(text.Text);
+
+                text.Background = textoVazio
+                                ? new SolidColorBrush(Colors.OrangeRed)
+                                : new SolidColorBrush(Colors.White);
+            
         }
 
         /*  private void btnOk_Click(object sender, RoutedEventArgs e)=>        
@@ -114,5 +138,6 @@ namespace ByteBank.Agencias
 
     }
 }
+
 
 

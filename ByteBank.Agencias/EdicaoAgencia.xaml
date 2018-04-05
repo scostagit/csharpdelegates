@@ -10,6 +10,7 @@
         <StackPanel Canvas.Top="15" Canvas.Left="15" Width="270">
             <TextBlock FontWeight="Bold">Número</TextBlock>
             <TextBox Name="txtNumero"></TextBox>
+            
             <TextBlock FontWeight="Bold">Nome</TextBlock>
             <TextBox Name="txtNome"></TextBox>
             <TextBlock FontWeight="Bold">Telefone</TextBlock>
