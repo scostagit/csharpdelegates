@@ -98,10 +98,28 @@ namespace ByteBank.Agencias
             this.btnCancelar.Click += new RoutedEventHandler(Fechar);
 
             this.txtNumero.TextChanged += ValidarCampoNulo;
+            this.txtNumero.TextChanged += ValidarDigito;
             this.txtNome.TextChanged += ValidarCampoNulo;
             this.txtTelefone.TextChanged += ValidarCampoNulo;
             this.txtDescricao.TextChanged += ValidarCampoNulo;
-            this.txtEndereco.TextChanged += ValidarCampoNulo;        }    
+            this.txtEndereco.TextChanged += ValidarCampoNulo;
+        }
+
+        private void ValidarDigito(object sender, EventArgs e)
+        {
+            var text = sender as TextBox;
+
+            var textoVazio = String.IsNullOrEmpty(text.Text);
+
+            //Func<char, bool> validaCaracters = caractere =>
+            //{
+            //    return Char.IsDigit(caractere);
+            //};  
+
+            text.Background = text.Text.All(Char.IsDigit)
+                            ? new SolidColorBrush(Colors.White)
+                            : new SolidColorBrush(Colors.OrangeRed);
+        }
 
         private void ValidarCampoNulo(object sender, EventArgs e)
         {

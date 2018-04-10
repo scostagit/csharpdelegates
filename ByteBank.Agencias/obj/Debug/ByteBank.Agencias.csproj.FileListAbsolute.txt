@@ -24,3 +24,4 @@ D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\Byt
 D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\ByteBank.Agencias.pdb
 D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\EdicaoAgencia.g.cs
 D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\EdicaoAgencia.baml
+D:\TI\ALURA\C#\Delegates\projeto\csharpdelegates\ByteBank.Agencias\obj\Debug\GeneratedInternalTypeHelper.g.cs
