@@ -97,40 +97,23 @@ namespace ByteBank.Agencias
             this.btnOk.Click += new RoutedEventHandler(Fechar);
             this.btnCancelar.Click += new RoutedEventHandler(Fechar);
 
-            this.txtNumero.TextChanged += ValidarCampoNulo;
-            this.txtNumero.TextChanged += ValidarDigito;
-            this.txtNome.TextChanged += ValidarCampoNulo;
-            this.txtTelefone.TextChanged += ValidarCampoNulo;
-            this.txtDescricao.TextChanged += ValidarCampoNulo;
-            this.txtEndereco.TextChanged += ValidarCampoNulo;
+            this.txtNumero.Validacao += ValidarCampoNulo;
+            this.txtNumero.Validacao += ValidarDigito;
+
+            this.txtNome.Validacao += ValidarCampoNulo;
+            this.txtTelefone.Validacao += ValidarCampoNulo;
+            this.txtDescricao.Validacao += ValidarCampoNulo;
+            this.txtEndereco.Validacao += ValidarCampoNulo;
         }
 
-        private void ValidarDigito(object sender, EventArgs e)
+        private bool ValidarDigito(string texto)
         {
-            var text = sender as TextBox;
-
-            var textoVazio = String.IsNullOrEmpty(text.Text);
-
-            //Func<char, bool> validaCaracters = caractere =>
-            //{
-            //    return Char.IsDigit(caractere);
-            //};  
-
-            text.Background = text.Text.All(Char.IsDigit)
-                            ? new SolidColorBrush(Colors.White)
-                            : new SolidColorBrush(Colors.OrangeRed);
+            return !texto.All(Char.IsDigit);
         }
 
-        private void ValidarCampoNulo(object sender, EventArgs e)
-        {
-            var text = sender as TextBox;
-
-            var textoVazio = String.IsNullOrEmpty(text.Text);
-
-                text.Background = textoVazio
-                                ? new SolidColorBrush(Colors.OrangeRed)
-                                : new SolidColorBrush(Colors.White);
-            
+        private bool ValidarCampoNulo(string texto)
+        {          
+            return String.IsNullOrEmpty(texto); 
         }
 
         /*  private void btnOk_Click(object sender, RoutedEventArgs e)=>        
