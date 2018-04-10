@@ -8,26 +8,53 @@ using System.Windows.Media;
 
 namespace ByteBank.Agencias
 {
-    public delegate bool ValidacaoHandler (string texto);
+    public delegate void ValidacaoHandler(object sender, ValidacaoEventArgs e);
 
     public class TextoBoxValidacao : TextBox
     {
-        public event ValidacaoHandler Validacao;
-
-        public TextoBoxValidacao()
+        private ValidacaoHandler _validacao;
+        public event ValidacaoHandler Validacao
         {
-            this.TextChanged += TextoBoxValidacao_TextChanged;
+            add
+            {
+                this._validacao += value;
+                OnTextoBoxValidacao();
+            }
+            remove
+            {
+                this._validacao -= value;
+            }
         }
 
-        private void TextoBoxValidacao_TextChanged(object sender, TextChangedEventArgs e)
+        protected override void OnTextChanged(TextChangedEventArgs e)
         {
-            if (Validacao != null)
-            {
-                var isValid = Validacao(this.Text);
+            base.OnTextChanged(e);
+            this.OnTextoBoxValidacao();
+        }
 
+        protected virtual void OnTextoBoxValidacao()
+        {
+            if (this._validacao != null)
+            {
+                var isValid = true;
+
+                var invocacoes = this._validacao.GetInvocationList();
+                ValidacaoEventArgs eventArgs = new ValidacaoEventArgs(this.Text);
+
+                foreach (ValidacaoHandler item in invocacoes)
+                {
+                    item(this, eventArgs);
+
+                    if (!eventArgs.EhValido)
+                    {
+                        isValid = false;
+                        break;
+                    }
+                }
+             
                 this.Background = isValid
-                        ? new SolidColorBrush(Colors.OrangeRed)
-                        : new SolidColorBrush(Colors.White);
+                        ? new SolidColorBrush(Colors.White)
+                        : new SolidColorBrush(Colors.OrangeRed);
             }
         }
     }

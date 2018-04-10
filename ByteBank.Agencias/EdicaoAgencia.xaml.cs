@@ -106,14 +106,14 @@ namespace ByteBank.Agencias
             this.txtEndereco.Validacao += ValidarCampoNulo;
         }
 
-        private bool ValidarDigito(string texto)
-        {
-            return !texto.All(Char.IsDigit);
+        private void ValidarDigito(object sender, ValidacaoEventArgs e)
+        {            
+            e.EhValido = e.Texto.All(Char.IsDigit);
         }
 
-        private bool ValidarCampoNulo(string texto)
-        {          
-            return String.IsNullOrEmpty(texto); 
+        private void ValidarCampoNulo(object sender, ValidacaoEventArgs e)
+        {
+            e.EhValido =  !String.IsNullOrEmpty(e.Texto); 
         }
 
         /*  private void btnOk_Click(object sender, RoutedEventArgs e)=>        
